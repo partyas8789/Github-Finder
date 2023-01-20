@@ -1,8 +1,12 @@
 const subcontainerlower = document.getElementById("subcontainerlower")
 const input = document.getElementById("input")
-
+inputsearch()
 async function inputsearch() {
     subcontainerlower.innerHTML = ""
+    if(input.value===""){
+        input.value="geekster"
+        console.log("aaaaaaaa");
+    }
     // console.log(input.value);
     const response = await fetch(`https://api.github.com/search/users?q=${input.value}`)
     // console.log(response);
@@ -35,5 +39,6 @@ async function inputsearch() {
 
 function clearall() {
     subcontainerlower.innerHTML = ""
-    input.value=""
+    input.value="geekster"
+    inputsearch()
 }
